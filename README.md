@@ -7,7 +7,9 @@ Layout is intended to be simple to use. The table which stores the data is at th
 
 ## View
 
-![Github] (projectGIF.gif)
+![Github] (
+        VehicleDatabaseGUI/projectGIF.gif
+      )
 ![An image of the JavaFXGUI](https://i.imgur.com/B3aDxLi.png)
 ![An image of the JavaFXGUI](https://i.imgur.com/rcNCjkO.png)
 

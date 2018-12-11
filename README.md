@@ -6,7 +6,7 @@ Vehicles from and to the database
 Layout is intended to be simple to use. The table which stores the data is at the center, allowing the user to interprete the information. Two buttons are displayed  underneath the table, allowing the user to interact with the table by adding or deleting items on the table. A second scene is opened allowing the user to input data.
 
 ## View
-![] (https://github.com/alexalex239/VehicleDatabaseGUI/blob/master/projectGIF.gif)
+![A video of the JavaFXGUI] (https://github.com/alexalex239/VehicleDatabaseGUI/blob/master/projectGIF.gif)
 ![An image of the JavaFXGUI](https://i.imgur.com/B3aDxLi.png)
 ![An image of the JavaFXGUI](https://i.imgur.com/rcNCjkO.png)
 

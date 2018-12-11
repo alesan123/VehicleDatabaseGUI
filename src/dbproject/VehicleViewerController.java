@@ -3,11 +3,10 @@
  * VehicleViewer.fxml with data from the database
  */
 
-package DBProject;
+package dbproject;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,13 +15,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class VehicleViewerController {
@@ -43,7 +38,6 @@ public class VehicleViewerController {
   private TableColumn priceCol;
 
   static ObservableList<Vehicle> itemList;
-  public int index;
 
   /**
    * calls initializeTable() function.
@@ -57,7 +51,7 @@ public class VehicleViewerController {
    */
   private void initializeTable() {
     //Connects to database
-    DBHandler handler = new DBHandler();
+    DbHandler handler = new DbHandler();
     final String query = "SELECT * FROM VEHICLE";
     ResultSet rs = handler.execQuery(query);
 
@@ -78,7 +72,7 @@ public class VehicleViewerController {
         itemList.add(vehicle);
       }
       //Populates the columns on the table with data from each object.
-      vinCol.setCellValueFactory(new PropertyValueFactory<Vehicle, String>("VIN"));
+      vinCol.setCellValueFactory(new PropertyValueFactory<Vehicle, String>("Vin"));
       makeCol.setCellValueFactory(new PropertyValueFactory<Vehicle, String>("make"));
       modelCol.setCellValueFactory(new PropertyValueFactory<Vehicle, String>("model"));
       yearCol.setCellValueFactory(new PropertyValueFactory<Vehicle, String>("year"));
@@ -88,12 +82,11 @@ public class VehicleViewerController {
       tableView.setItems(itemList);
 
     } catch (SQLException e) {
-      e.getLocalizedMessage();
     }
   }
 
   /**
-   * Add Vehicle button opens a new scene which prompts user to enter data for a new Vehicle
+   * Add Vehicle button opens a new scene which prompts user to enter data for a new Vehicle.
    */
   public void addVehicle(ActionEvent event) throws Exception {
     Parent addNewParent = FXMLLoader.load(getClass().getResource("AddVehicle.fxml"));
@@ -105,15 +98,17 @@ public class VehicleViewerController {
   }
 
   /**
-   * Function deletes selected Vehicle
+   * Function deletes selected Vehicle.
    */
   public void deleteVehicle(ActionEvent event) {
     //Creates object named clickedOn whenever a row is selected on the tableView
     Vehicle clickedOn = tableView.getSelectionModel().getSelectedItem();
     //It only deletes whenever a row is selected
     if (clickedOn != null) {
-      final String delete = "DELETE FROM VEHICLE WHERE VIN = '" + clickedOn.getVIN() + "'";
-      DBHandler handler = new DBHandler();
+      final String delete = "DELETE FROM VEHICLE WHERE VIN = '" + clickedOn.getVin() + "'";
+      DbHandler handler = new DbHandler();
+      // String delete needs to be dynamically genereated because the VIN number will change
+      // every time.
       handler.execAction(delete);
       initializeTable();
     }

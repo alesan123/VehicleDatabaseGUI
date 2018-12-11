@@ -3,20 +3,30 @@
  * objects which store data
  */
 
-package DBProject;
+package dbproject;
 
 public class Vehicle {
 
-  private String VIN;
+  private String vin;
   private String make;
   private String model;
   private String year;
   private String mileage;
   private String price;
 
-  public Vehicle(String VIN, String make, String model, String year, String mileage,
+  /**
+   * Constructor creates Vehicle.
+   *
+   * @param vin vin number.
+   * @param make make
+   * @param model model
+   * @param year year
+   * @param mileage mileage
+   * @param price price
+   */
+  public Vehicle(String vin, String make, String model, String year, String mileage,
       String price) {
-    this.VIN = VIN;
+    this.vin = vin;
     this.make = make;
     this.model = model;
     this.year = year;
@@ -25,8 +35,8 @@ public class Vehicle {
   }
 
 
-  public String getVIN() {
-    return VIN;
+  public String getVin() {
+    return vin;
   }
 
   public String getMake() {

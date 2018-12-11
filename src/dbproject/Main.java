@@ -1,8 +1,8 @@
 /**
- * Name: Main.java. Author: Alejandro Sanchez. Description: Main class used to start application
+ * Name: Main.java. Author: Alejandro Sanchez. Description: Main class used to start application.
  */
 
-package DBProject;
+package dbproject;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

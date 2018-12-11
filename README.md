@@ -3,7 +3,7 @@
 Java based application allows user to input data into an embedded Derby database. Application stores and pulls information about
 Vehicles from and to the database
 ## View
-![A GIF of teh JavaFXGUI] (projectGIF.gif)
+![A GIF of the JavaFXGUI] (projectGIF.gif)
 ![An image of the JavaFXGUI](https://i.imgur.com/B3aDxLi.png)
 ![An image of the JavaFXGUI](https://i.imgur.com/rcNCjkO.png)
 ## GUI Design Principles

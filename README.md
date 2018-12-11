@@ -7,6 +7,8 @@ Layout is intended to be simple to use. The table which stores the data is at th
 
 ## View
 ![](projectGIF.gif)
+## Database Diagram
+![](databaseDiagram.png)
 ## Requirements
 * Java JDK 8 or higher
 * Integrated development environment (IDE)
